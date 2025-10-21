@@ -2,8 +2,6 @@ services:
   db:
     image: postgres
     container_name: okkam_postgres
-    env_file:
-      - .env.template
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
@@ -27,8 +25,6 @@ services:
         condition: service_healthy
     ports:
       - "80:8000"
-    env_file:
-      - .env
 
 volumes:
   postgres_data:
